@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/note-app', { 
+mongoose.connect('mongodb+srv://basedos:Base1234Datos@cluster0.goeh8jl.mongodb.net/test', { 
     //useCreateIndex: true,
     useNewUrlParser: true,
     //useFindAndModify: false
