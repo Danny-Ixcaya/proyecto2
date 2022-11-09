@@ -2,9 +2,9 @@
  .prin {
     /* box-sizing: border-box; */
    padding: 0 ;
-   margin: 0 ;
+   margin: 0 auto;
    /* background-color: brown; */
-   width: 100%;
+   width: 90%;
  }
  #ttl{
     /* background-color: blueviolet; */
