@@ -1,33 +1,29 @@
 <link rel="stylesheet" href="/css/prestamo/inicio.css">
 <main class="prin">
 {{> menpres}}
-
-
-    
-
-   
-
+    <h3>Realizar Prestamo</h3>
+    <p><i>*Nota</i> Llene los datos correctamente, despues click en el boton CALCULAR</p>
 
 <div class="container">
     <div class="row">
         <div class="col-md-5">
                 <div class="Formulario">
-                    <form class="row">
+                    <form class="row" action="/prestamos-crear" method="POST">
                         <div class="col-md-12">
                         <label class="form-label">Nombre Completo: </label>
-                        <input type="text" class="form-control">
+                        <input type="text" name="nombre" class="form-control">
                         </div>
                         <div class="col-md-6">
                         <label class="form-label">Cantidad a Prestar: </label>
-                        <input type="text" class="form-control">
+                        <input type="number" id="capital" name="cantidad" class="form-control">
                         </div>
                         <div class="col-md-6">
                         <label class="form-label">Tiempo a Prestar</label>
-                        <input type="text" class="form-control">
+                        <input type="number" name="tiempo" id="couta" class="form-control">
                         </div>
                         <div class="col-md-6">
                         <label class="form-label">Direccion</label>
-                        <input type="email" class="form-control">
+                        <input type="text" class="form-control">
                         </div>
                         <div class="col-md-4">
                         <label class="form-label">Estado</label>
@@ -39,8 +35,8 @@
                         </select>
                         </div>
                         <div class="col-md-2">
-                        <label class="form-label">Año</label>
-                        <input type="text" class="form-control">
+                        <label class="form-label">Interes</label>
+                        <input type="text" id="interes" name="interes" class="form-control">
                         </div>
                         {{!-- <div class="col-md-6">
                         <label class="form-label">Upload Domicile</label>
@@ -64,7 +60,7 @@
                         </div> --}}
                         <div class="col-md-12">
                         <br>
-                        <button class="btn btn-primary form-control">Submit</button>
+                        <button class="btn btn-primary form-control">Agregar</button>
                         </div>
                     </form>
             </div>
@@ -77,36 +73,30 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>Casa</th>
-                            <th>Casa</th>
-                            <th>casa</th>
-                            <th>accion</th>
-                            <th>accion</th>
-                            <th>accion</th>
+                            <td>NRO</td>
+                            <td>CAPITAL</td>
+                            <td>INTERES</td>
+                            <td>IMPORTE A PAGAR</td>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>Casa</td>
-                            <td>Casa</td>
-                            <td>accion</td>
-                            <td>accion</td>
-                            <td>accion</td>
-                            <td>
-                                {{!-- <button type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i> Danger</button>
-                                <button type="button" class="btn btn-success">Success</button> --}}
-                                    <a id="red" href="" title="Elimanar"><i class="bi bi-trash-fill"></i></a>
-                                    <a id="green" href="" title="Editar"><i class="bi bi-pencil-square" ></i></a>
-                            </td>
-                        </tr>
-                      
+                    <tbody id="tab">
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <td class="ft">TOTAL</td>
+                            <td id="t1"></td>
+                            <td id="t2"></td>
+                            <td id="t3"></td>
+                        </tr>
+                    </tfoot>
         
                 </table>
             </div>
-            
+            <button class="btn btn-primary" onclick="gen_table();">CALCULAR</button>
         </div>
     </div>
 </div>
 
 </main>
+
+<script src="/js/prestamo.js"></script>

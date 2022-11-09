@@ -2,19 +2,19 @@ const { Schema, model } = require('mongoose');
 
 const prestamoSchema = new Schema({
     nombre: {
-        typeof: String,
+        type: String,
         require: true
     },
     cantidad:{
-        typeof: Number,
+        type: Number,
         require: true
     },
     interes: {
-        typeof: Number,
+        type: Number,
         require: true
     },
     tiempo: {
-        typeof: Number,
+        type: Number,
         require: true
     },
 
@@ -27,4 +27,4 @@ const prestamoSchema = new Schema({
     }
 );
 
-module.exports = model('crear', crear);
+module.exports = model('Prestamo', prestamoSchema);

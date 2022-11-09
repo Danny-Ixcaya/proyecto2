@@ -1,6 +1,16 @@
 <link rel="stylesheet" href="/css/prestamo/inicio.css">
 <main class="prin">
 {{> menpres}}
-<h3> prestamo realizado el 22/90/22</h3>
+{{#if condition}}
+<h3> prestamo realizados</h3>
+
+{{else}}
+<h3>Ningun prestamo</h3>
+   
+    
+{{/if}}
+
+
+
 
 </main>
