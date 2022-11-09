@@ -12,6 +12,7 @@ require('./database');
 require('./config/passport');
 
 // settings
+
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.engine('.hbs', exphbs.engine({
@@ -55,3 +56,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.listen(app.get('port'), () => {
     console.log('Server on Port', app.get('port'));
 });
+
+
+// app.use((req, res, next) => {
+//     res.status(404).render("404");
+//   });
