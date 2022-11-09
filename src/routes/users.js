@@ -10,7 +10,7 @@ router.get('/users/signin', (req, res) => {
 })
 router.post('/users/signin', passport.authenticate('local', {
     //ruta para pantalla de credito
-    successRedirect: '/prestamos',
+    successRedirect: '/prestamos-inicio',
     failureRedirect: '/users/signin',
     failureFlash: true
 }));
